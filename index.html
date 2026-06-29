@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Transaction.css">
     <link rel="stylesheet" href="login.css">
-    <script src="https://kit.fontawesome.com/913fc2502a.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="https://kit.fontawesome.com/913fc2502a.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -16,7 +17,7 @@
      <main>
         <nav>
             <div class="navInfo">
-             <h6>SS</h6>
+             <h6 class="userName">SS</h6>
             <button class="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
             </div>
         </nav>
@@ -28,31 +29,31 @@
                 <div class="currentBalance">
                     <div class="cardIcon iconBlue"><i class="fa-solid fa-building-columns"></i></div>
                     <p class="cardLabel">Current Balance</p>
-                    <h3 class="cardValue" id="currentBal">$0.00</h3>
+                    <h3 id="currentBal" class="cardValue">$0.00</h3>
                 </div>
 
                 <div class="totalIncome">
                     <div class="cardIcon iconGreen"><i class="fa-solid fa-arrow-trend-up"></i></div>
                     <p class="cardLabel">Total Income</p>
-                    <h3 class="cardValue cardValueGreen" id="totalInc">$0.00</h3>
+                    <h3 id="totalInc" class="cardValue cardValueGreen">$0.00</h3>
                 </div>
 
                 <div class="totalExpense">
                     <div class="cardIcon iconRed"><i class="fa-solid fa-arrow-trend-down"></i></div>
                     <p class="cardLabel">Total Expense</p>
-                    <h3 class="cardValue cardValueRed" id="totalExp">$0.00</h3>
+                    <h3 id="totalExp" class="cardValue cardValueRed">$0.00</h3>
                 </div>
 
                 <div class="totalTransactions">
                     <div class="cardIcon iconBlue"><i class="fa-solid fa-piggy-bank"></i></div>
                     <p class="cardLabel">Total Transactions</p>
-                    <h3 class="cardValue" id="totalTrans">0</h3>
+                    <h3 id="totalTrans" class="cardValue">0</h3>
                 </div>
 
             </div>
         </section>
         <section class="secoundSec  content " >
-            <div class="graph">
+                 <div class="graph">
                 <h3>Cash Flow Analysis</h3>
                 <div class="graphLegend">
                     <span><i class="legendDot legendIncome"></i> Income</span>
@@ -98,27 +99,9 @@
                 </div>
                 <div class="recordsTableBody">
 
-                    <div class="recordRow">
-                        <span class="recordDate">2026-06-28</span>
-                        <span class="recordDesc">buying car</span>
-                        <span class="recordCategory"><span class="categoryBadge">Shopping</span></span>
-                        <span class="recordAmount amountRed">-$200000.00</span>
-                        <span class="recordActions">
-                            <button class="editBtn"><i class="fa-solid fa-pen"></i></button>
-                            <button class="deleteBtn"><i class="fa-solid fa-trash"></i></button>
-                        </span>
-                    </div>
+             
 
-                    <div class="recordRow">
-                        <span class="recordDate">2026-06-28</span>
-                        <span class="recordDesc">salary</span>
-                        <span class="recordCategory"><span class="categoryBadge">Salary</span></span>
-                        <span class="recordAmount amountGreen">+$50000.00</span>
-                        <span class="recordActions">
-                            <button class="editBtn"><i class="fa-solid fa-pen"></i></button>
-                            <button class="deleteBtn"><i class="fa-solid fa-trash"></i></button>
-                        </span>
-                    </div>
+               
 
                 </div>
             </div>
@@ -141,6 +124,8 @@
   </div> 
 
        
+</section>
+    
     </section>
      <section class="login-Sec" id="loginPage">
          <div class="loginDiv">
@@ -151,18 +136,18 @@
             <form class="inputsDiv">
                 <label for="loginUsername">Username</label>
                 <input type="text" name="username" id="loginUsername" placeholder="">
-
+ 
                 <label for="loginPassword">Password</label>
                 <input type="password" name="password" id="loginPassword" placeholder="">
-
+ 
                 <button type="submit" class="loginBtn">Login</button>
             </form>
             <p>Don't have an account? <span class="registerLink">Register here</span></p>
          </div>
-
-
+ 
+ 
      </section>
-
+ 
      <section class="register-Sec hidden" id="registerPage">
          <div class="registerDiv">
             <div class="registerDivHeads">
@@ -172,17 +157,18 @@
             <form class="registerInputsDiv" id="registerInputsDiv">
                 <label for="registerUsername">Choose a Username</label>
                 <input type="text" name="username" id="registerUsername" placeholder="">
-
+ 
                 <label for="registerPassword">Password</label>
                 <input type="password" name="password" id="registerPassword" placeholder="">
-
+ 
                 <button type="submit" class="registerBtn">Register</button>
             </form>
             <p>Already have an account? <span class="loginLink">Login here</span></p>
          </div>
-
-
+ 
+ 
      </section>
+ 
 
 
 
