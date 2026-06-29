@@ -1,0 +1,124 @@
+
+  .overlay {
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.057);
+  }
+ 
+  .modal {
+    background: #ffffff;
+    width: 380px;
+    max-width: 90vw;
+    border-radius: 14px;
+    padding: 28px 28px 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    position: relative;
+  }
+ 
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+  }
+ 
+  .modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+  }
+ 
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    line-height: 1;
+    color: #555;
+    cursor: pointer;
+    padding: 2px;
+  }
+  .close-btn:hover { color: #000; }
+ 
+  .field {
+    margin-bottom: 18px;
+  }
+ 
+  .field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 6px;
+  }
+ 
+  .field input,
+  .field select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #d8d8d8;
+    border-radius: 8px;
+    background: #f6f6f6;
+    color: #111;
+    appearance: none;
+    -webkit-appearance: none;
+    font-family: inherit;
+  }
+ 
+  .field select {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%23555' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 32px;
+    cursor: pointer;
+  }
+ 
+  .field input::placeholder {
+    color: #9a9a9a;
+  }
+ 
+  .field input:focus,
+  .field select:focus {
+    outline: none;
+    border-color: #111;
+    background: #ffffff;
+  }
+ 
+  .row {
+    display: flex;
+    gap: 14px;
+  }
+  .row .field {
+    flex: 1;
+  }
+ 
+  /* Category select highlight state, like screenshot 2 with focus ring */
+  #category:focus {
+    border: 1.5px solid #111;
+  }
+ 
+  .save-btn {
+    width: 100%;
+    padding: 13px;
+    margin-top: 6px;
+    background: #111111;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .save-btn:hover {
+    background: #000000;
+  }
+ 
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+  }

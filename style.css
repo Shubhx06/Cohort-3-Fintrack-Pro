@@ -1,0 +1,551 @@
+*{ 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color: #f8f9fb;
+}
+main {
+    margin-left: 15%;
+    width: 85%;
+    min-height: 100vh;
+    color:black;
+
+}
+.content {
+    width: 100%;
+    background-color: #f8f9fb;
+    padding: 25px 30px;
+}
+h2{
+    color: black;
+}
+.content h2{
+    font-size: 26px;
+}
+.content p{
+    color: gray;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+/* this is the css for the login page    */
+
+
+/* *******************************xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   */
+
+
+nav{
+    padding: 10px 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 76px;
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.logoutBtn{
+    padding: 8px 15px;
+    width: auto;
+    background-color: white;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+.logoutBtn:hover{
+    background-color: #f3f4f6;
+}
+.navInfo{
+ padding: 0px;
+ align-items: center;
+ display:flex ;
+ gap: 15px;
+}
+.navInfo h6{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #444;
+}
+
+
+.statesDiv{
+    justify-content: space-between;
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    height: auto;
+    gap: 20px;
+    background-color: transparent;
+}
+
+.currentBalance,
+.totalIncome,
+.totalExpense,
+.totalTransactions{
+    width: 24%;
+    height: auto;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.cardIcon{
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    font-size: 15px;
+}
+.iconBlue{ background-color: #dbeafe; color: #2563eb; }
+.iconGreen{ background-color: #dcfce7; color: #16a34a; }
+.iconRed{ background-color: #fee2e2; color: #dc2626; }
+
+.cardLabel{
+    font-size: 13px;
+    color: gray;
+    margin-bottom: 6px;
+}
+.cardValue{
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+}
+.cardValueGreen{ color: #16a34a; }
+.cardValueRed{ color: #dc2626; }
+
+
+/*  //////////////secoundSec //////////////////////////*/
+
+.secoundSec{
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 0;
+}
+
+.graph{
+    height: auto;
+    width: 70%;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px;
+}
+.graph h3{
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+.graphLegend{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 15px;
+}
+.legendDot{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    margin-right: 5px;
+}
+.legendIncome{ background-color: #166534; }
+.legendExpense{ background-color: #991b1b; }
+.graphArea{
+    height: 240px;
+    background-color: #fafafa;
+    border: 1px solid #eee;
+    position: relative;
+    padding: 10px;
+}
+.graphArea canvas{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.preferencesSetting{
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    height: auto;
+    width: 30%;
+    padding: 20px;
+}
+.preferencesSetting h3{
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+.darkModeRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+}
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider{
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #d1d5db;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.slider::before{
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+.switch input:checked + .slider{
+    background-color: #2563eb;
+}
+.switch input:checked + .slider::before{
+    transform: translateX(18px);
+}
+
+.resetBtn{
+    width: 100%;
+    padding: 12px;
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.resetBtn:hover{
+    background-color: #fecaca;
+}
+
+/*  //////////////thridSec //////////////////////////*/
+.thridSec{
+    width: 100%;
+    min-height: auto;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0;
+}
+
+.records{
+    width: 70%;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px;
+}
+.records h3{
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+.recordsFilter{
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.searchBox{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 8px 12px;
+    background-color: #f8f9fb;
+    color: gray;
+}
+.searchBox input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    font-size: 14px;
+    color: black;
+}
+.typeFilter{
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: white;
+    font-size: 14px;
+    color: black;
+}
+.recordsTableHead{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 12px;
+    font-weight: bold;
+    color: gray;
+    text-transform: uppercase;
+}
+.recordsTableHead span{
+    flex: 1;
+}
+.recordsTableBody{
+    font-size: 14px;
+}
+
+.recordRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.recordRow span{
+    flex: 1;
+}
+.recordDate{
+    color: #444;
+}
+.recordDesc{
+    font-weight: bold;
+    color: black;
+}
+.categoryBadge{
+    background-color: #f3f4f6;
+    color: #444;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+.recordAmount{
+    font-weight: bold;
+}
+.amountRed{ color: #dc2626; }
+.amountGreen{ color: #16a34a; }
+
+.recordActions{
+    display: flex;
+    gap: 12px;
+    flex: 1;
+}
+.editBtn,
+.deleteBtn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 14px;
+}
+.editBtn{ color: #2563eb; }
+.deleteBtn{ color: #dc2626; }
+
+
+
+/*  //////////////leftSection //////////////////////////*/
+.leftSection {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 100vh;
+    background-color: white;
+    border-right: 1px solid #e5e7eb;
+    display: flex;
+    padding: 0;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.leftHeading{
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ padding: 24px 20px;
+ border-bottom: 1px solid #e5e7eb;
+}
+.leftHeading i{
+    font-size: 20px;
+}
+.leftHeading p{
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.3;
+}
+.leftHeading p span{
+    font-size: 12px;
+    font-weight: normal;
+    color: gray;
+}
+
+.controlBtnDiv{
+    padding-top:0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.leftSectionBtn{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 20px;
+}
+
+.navItem{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border: none;
+    background-color: transparent;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #444;
+    text-align: left;
+    cursor: pointer;
+}
+.navItem:hover{
+    background-color: #f3f4f6;
+}
+.navItem.active{
+    background-color: #dbeafe;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.addTransactionBtn{
+    width: 100%;
+    padding: 12px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+}
+.addTransactionBtn:hover{
+    background-color: #222;
+}
+
+
+
+
+
+
+ 
+body.dark-mode,
+body.dark-mode html{
+    background-color: #111418;
+}
+ 
+body.dark-mode nav,
+body.dark-mode .leftSection,
+body.dark-mode .content,
+body.dark-mode .currentBalance,
+body.dark-mode .totalIncome,
+body.dark-mode .totalExpense,
+body.dark-mode .totalTransactions,
+body.dark-mode .graph,
+body.dark-mode .preferencesSetting,
+body.dark-mode .records{
+    background-color: #1c1f26;
+    border-color: #2c2f38;
+}
+ 
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode .cardValue,
+body.dark-mode .recordDesc,
+body.dark-mode .leftHeading p,
+body.dark-mode .navItem,
+body.dark-mode .darkModeRow p,
+body.dark-mode .recordDate,
+body.dark-mode .navInfo h6{
+    color: #f1f1f1;
+}
+ 
+body.dark-mode .content p,
+body.dark-mode .cardLabel{
+    color: #9aa0aa;
+}
+ 
+body.dark-mode .navItem:hover{
+    background-color: #2a2d35;
+}
+ 
+body.dark-mode .graphArea,
+body.dark-mode .searchBox,
+body.dark-mode .typeFilter{
+    background-color: #14171d;
+    border-color: #2c2f38;
+    color: #f1f1f1;
+}
+ 
+body.dark-mode .categoryBadge{
+    background-color: #2a2d35;
+    color: #d1d5db;
+}
+ 
+body.dark-mode .recordRow,
+body.dark-mode .recordsTableHead,
+body.dark-mode .darkModeRow{
+    border-color: #2c2f38;
+}
+ 
+body.dark-mode .logoutBtn{
+    background-color: #1c1f26;
+    border-color: #2c2f38;
+    color: #f1f1f1;
+}
