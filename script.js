@@ -23,9 +23,11 @@ const amounts = document.querySelector("#amount")
 const dates = document.querySelector("#date")
 const categorys = document.querySelector("#category")
 const headingOfTansaDiv = document.querySelector(".headingOfTansaDiv")
+const userNames = document.querySelector(".userName") 
 
 const currentUser = localStorage.getItem("currentUser");
 const dataKey = `data_${currentUser}`;
+userNames.textContent = currentUser;
 
 let arryOfDetails = JSON.parse(localStorage.getItem(dataKey)) || [];
 let editIndex = -1;
