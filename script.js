@@ -1,6 +1,7 @@
 const addTransactionBtn = document.querySelector(".addTransactionBtn")
 const overlay = document.querySelector(".overlay")
 const closebtn = document.querySelector(".close-btn")
+const body = document.querySelector("body")
 
 addTransactionBtn.addEventListener("click",()=>{
 headingOfTansaDiv.textContent="Add Transaction"
@@ -23,7 +24,10 @@ const dates = document.querySelector("#date")
 const categorys = document.querySelector("#category")
 const headingOfTansaDiv = document.querySelector(".headingOfTansaDiv")
 
-let arryOfDetails = JSON.parse(localStorage.getItem("data")) ||[]
+const currentUser = localStorage.getItem("currentUser");
+const dataKey = `data_${currentUser}`;
+
+let arryOfDetails = JSON.parse(localStorage.getItem(dataKey)) || [];
 let editIndex = -1;
 
 function render(){
@@ -73,8 +77,13 @@ savebtn.addEventListener('click',()=>{
     arryOfDetails[editIndex] = obj;
     editIndex = -1;
  }
+localStorage.setItem(dataKey, JSON.stringify(arryOfDetails));
+   type.value = "";
+    descriptions.value = "";
+    amounts.value = "";
+    dates.value = "";
+    categorys.value = "";
 
- localStorage.setItem("data", JSON.stringify(arryOfDetails));
  overlay.style.display ="none"     
  render();
     
@@ -86,7 +95,7 @@ savebtn.addEventListener('click',()=>{
 let deleteRecord=(index)=>{
 
 arryOfDetails.splice(index,1)
-localStorage.setItem("data",JSON.stringify(arryOfDetails))
+localStorage.setItem(dataKey, JSON.stringify(arryOfDetails));
  render()
 }
 
@@ -114,6 +123,7 @@ const totalTrans = document.querySelector("#totalTrans")
 const totalExp = document.querySelector("#totalExp")
 const totalInc = document.querySelector("#totalInc")
 const currentBal = document.querySelector("#currentBal")
+
 
 
 
@@ -205,12 +215,37 @@ function renderChart() {
 
 
 
+const resetBtn = document.querySelector(".resetBtn");
 
-const resetBtn = document.querySelector(".resetBtn")
 resetBtn.addEventListener("click", () => {
-    localStorage.removeItem("data");
-    arryOfDetails = [];
-    render();
+    Swal.fire({
+        title: "Are you sure?",
+        text: "This will permanently delete all your transactions.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+
+        if (result.isConfirmed) {
+
+            // Delete the data
+          localStorage.removeItem(dataKey);
+            arryOfDetails = [];
+
+            render();
+
+            // Show success message
+            Swal.fire({
+                title: "Deleted!",
+                text: "All transactions have been deleted.",
+                icon: "success"
+            });
+
+        }
+
+    });
 });
 
 
@@ -227,9 +262,11 @@ if (localStorage.getItem("darkMode") === "on") {
 darkModeToggle.addEventListener("change", () => {
     if (darkModeToggle.checked) {
         document.body.classList.add("dark-mode");
+        body.style.backgroundColor = "#2a2d35"
         localStorage.setItem("darkMode", "on");
     } else {
         document.body.classList.remove("dark-mode");
+        body.style.backgroundColor = "#f8f9fb"
         localStorage.setItem("darkMode", "off");
     }
 });
