@@ -73,7 +73,8 @@ nav{
  padding: 0px;
  align-items: center;
  display:flex ;
- gap: 15px;
+width: 143px;
+justify-content: space-between;
 }
 .navInfo h6{
     width: 32px;
